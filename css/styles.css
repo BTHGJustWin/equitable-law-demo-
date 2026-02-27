@@ -389,8 +389,23 @@ p {
 .header__actions {
   display: flex;
   align-items: center;
-  gap: var(--sp-sm);
+  gap: 0.5rem;
   z-index: 1001;
+}
+
+/* Hide consultation button on mobile — only show hamburger and phone */
+.header__actions .btn--sm {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .header__actions .btn--sm {
+    display: inline-flex;
+  }
+
+  .header__actions {
+    gap: var(--sp-sm);
+  }
 }
 
 .header__phone {
@@ -1527,21 +1542,34 @@ p {
   background: var(--clr-border);
 }
 
-/* Hide hablamos badge and lang toggle on very small screens to prevent overflow */
-@media (max-width: 359px) {
-  .hablamos-badge {
+/* Mobile nav language section — hidden by default, shown when nav opens */
+.nav__mobile-lang {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-sm);
+  padding-top: var(--sp-lg);
+  margin-top: var(--sp-md);
+  border-top: 1px solid var(--clr-border);
+}
+
+.nav--open .nav__mobile-lang {
+  display: flex;
+}
+
+/* Hide badge and lang toggle from header on mobile/tablet — they show in mobile nav */
+@media (max-width: 1023px) {
+  .header__hablamos,
+  .header__lang-toggle {
     display: none;
   }
 }
 
-/* In mobile nav, show badge below nav links */
-.nav--open .hablamos-badge-mobile {
-  display: inline-flex;
-  margin-top: var(--sp-md);
-}
-
-.hablamos-badge-mobile {
-  display: none;
+/* On desktop, hide the mobile nav language section */
+@media (min-width: 1024px) {
+  .nav__mobile-lang {
+    display: none !important;
+  }
 }
 
 /* ---------- EXAMPLE Watermark ---------- */
