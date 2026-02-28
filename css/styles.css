@@ -313,9 +313,8 @@ p {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--sp-md);
+  width: 100%;
+  padding: 0 var(--sp-lg);
 }
 
 .header__logo {
@@ -1420,16 +1419,14 @@ p {
 
   .nav__list {
     flex-direction: row;
-    gap: 0.75rem;
+    gap: var(--sp-md);
   }
 
   .nav__link {
-    font-size: var(--fs-xs);
-    font-weight: 600;
+    font-size: var(--fs-sm);
+    font-weight: 500;
     padding: 0;
     white-space: nowrap;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
   }
 
   .nav__link::after {
@@ -1482,27 +1479,19 @@ p {
   .container {
     padding: 0 var(--sp-lg);
   }
-
-  .nav__list {
-    gap: var(--sp-md);
-  }
-
-  .nav__link {
-    font-size: var(--fs-sm);
-  }
 }
 
 /* ---------- Language Toggle & Hablamos Badge ---------- */
 .hablamos-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.3em;
+  gap: 0.4em;
   font-family: var(--ff-body);
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: var(--clr-primary);
   background: var(--clr-accent);
-  padding: 0.25em 0.65em;
+  padding: 0.3em 0.75em;
   border-radius: 50px;
   white-space: nowrap;
   letter-spacing: 0.02em;
